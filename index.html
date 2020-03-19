@@ -10,7 +10,7 @@
    
 
 </head>
-<body>
+<body  id="themeBody">
    
 <div class="header-top">
     <p> ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</p>
@@ -18,24 +18,28 @@
 
 <header class="content-head center">
     <div class="content-barra">
-       <img src="./img/gifOF_logo.png" alt="logo-gifOf">
-         <div class="prueba"> 
-            <div class="boton boton-spa" >
+       <img src="./img/gifOF_logo.png" alt="logo-gifOf" id="themeLogo">
+         <div class="sub-barra"> 
+            <div class="boton botonCreateGif" >
                 <a href="#"> Crear Guifos</a>
             </div>
 
             <div class="boton" >
-                <a href="#"> Elegir temas</a>
+                <a href="#"> Elegir temas</a>  
+                <div class="contentThemes" id="content-Themes">
+                    <div class="styleThemes themeNight" id="themeNight"> 
+                        <a href="#" class="textTypeTheme">Sailor Night</a>
+                     </div>
+                    <div class="styleThemes themeDay">
+                        <a href="#" class="textTypeTheme" id="themeDay"> Sailor Day</a>      
+                   </div>
+                </div> 
             </div>
-
-                <select class="select-themes">  
-                    <option>  </option>
-                    <option>tema 1</option>
-                    <option>tema 2</option>
-                </select>
            
+            <div class="select-themes"><span id="dropDown ocultar">&#9662</span></div>
+   
             <div class="mys-gif">
-                <a href="#"> Mis Guifos</a>
+                <a href="#" id="colorTextGuifos"> Mis Guifos</a>
             </div>
         </div>
     </div>
@@ -69,31 +73,43 @@
        <input type="text" placeholder="Hoy te sugerimos" class="place-suggestions" >
    </div>
    
-   
-   <div class="container-gif">
+   <p></p>
 
-   
-        <!-- <div class="searchGif "></div> -->
+   <div class="container-gif">      
         <div class="eniac">
+            <div class="ValueSuggestionGif"><span             class="contentValue" >  </span>
+            </div>
             <img src="" class="gif gif-suggetions" alt="">
+            <div class="content-boton">
+                <a href="#" class="boton-mas" id="boton-1" > Ver más...</a>
+            </div>
+        </div>  
+           
+        <div class="eniac" >
+            <div class="ValueSuggestionGif"><span              class="contentValue">  # </span>
+            </div>
+            <img src="" class="gif gif-suggetions"  alt="" >
             <div class="content-boton">
                 <a href="#" class="boton-mas" > Ver más...</a>
             </div>
-        </div>  
-   
-
-             
-
-        <div class="eniac" >
-            <img src="" class="gif gif-suggetions"  alt="" >
         </div>
 
         <div class="eniac">
+            <div class="ValueSuggestionGif"><span              class="contentValue">  # </span>
+            </div>
             <img src="" class="gif gif-suggetions" alt=""> 
+            <div class="content-boton">
+                <a href="#" class="boton-mas" > Ver más...</a>
+            </div>
         </div>
 
         <div class="eniac">
+            <div class="ValueSuggestionGif"><span              class="contentValue">  # </span>
+            </div>
             <img src="" class="gif gif-suggetions "  alt="">
+            <div class="content-boton">
+                <a href="#" class="boton-mas" > Ver más...</a>
+            </div>
         </div>
    </div>
 </section >

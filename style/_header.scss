@@ -12,7 +12,6 @@ padding-left: 5%;
 padding-right: 12%;
 }
 
-
 .header-top{
 background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
 box-shadow: 0 1px 0 0 #110038;
@@ -38,9 +37,15 @@ margin-top: 2%;
         display: flex;
         justify-content: space-between;
 
-        .prueba{
+        .sub-barra{
             display: flex;
             justify-content: space-around;
+            width: 390px;
+
+            .botonCreateGif{
+
+                margin-right: 2%;
+            }
             
             .boton{
                 background: #F7C9F3;
@@ -51,34 +56,92 @@ margin-top: 2%;
                 
                 
                 a{
+                    display: block;
+                    text-align: center;
                     text-decoration: none;
                     font-family: "Chakra Petch";
                     font-size: 16px;
                     color: #110038;
                     letter-spacing: 0;
-                    padding-left: 15%;
-
+                    padding-top: 2%;
                 }
                            
             }
-
         
             .select-themes{
 
                 background: #F7C9F3;
                 border: 1px solid  #110038;
-                // box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+                box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
                 width: 30px;
-                height: 32px;
+                height: 30px;
                 margin-right: 10px;
                 margin-left: 0px;
                 appearance: none;
-
                 background-image: url(../img/dropdown.svg) no-repeat;
                 background-size: 100px;
                 cursor: pointer;
+
+                span  {
+
+                    display: block;
+                    text-align: center;
+                    font-size: 23px;
+                }
                            
             }
+
+           .contentThemes{
+
+                position: absolute;
+                top: 78px;
+                background: #E6E6E6;
+                box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+                width:161px ;
+                height: 90px;     
+                display: none;           
+            }
+
+            .styleThemes{
+                display: block;
+                text-align: center;
+                width: 140px;
+                height: 30px;                             
+            }
+
+            .themeDay{
+
+                background: #FFF4FD;
+                border: 1px solid #CCA6C9;
+                box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+                margin-left: auto;
+                margin-right: auto;
+                                
+            }
+
+            .themeNight{
+                
+                background: #F0F0F0;
+                border: 1px solid #808080;
+                box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+                margin-top: 10px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 5%;
+                                
+            }
+
+            .textTypeTheme{
+
+                margin: 0;
+                font-family: "Chakra Petch";
+                font-size: 15px;
+                color: #110038;
+                letter-spacing: 0;
+                line-height: 22px;
+            }
+
+
 
             .mys-gif{
 
@@ -88,9 +151,10 @@ margin-top: 2%;
                     text-decoration: none;
                     font-family: "Chakra Petch";    
                     font-size: 16px;
-                    color: #110038;
                     letter-spacing: 0;
                     line-height: 18px;
+                    display: block;
+                    margin-top: 8%;
                 }
         
             }

@@ -1,19 +1,72 @@
 const api_key = "TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ"
 
-suggestionsGif()
-topVideos()
+
+
+window.onload = function() 
+{
+    suggestionsGif()
+    topVideos()
+
+}
+
 
 document.getElementById("button").addEventListener("click", function(){
 
     let resul = document.getElementById("search-gif").value
    
     // localStorageSearch(resul)
-    showHistorySearch(resul)
+    
+    noShowTitleGif()
     getData(resul)
+    showHistorySearch(resul)
     noShowInputText()
 
   })
 
+//  seleccionar tema, COMO HACERLO MAS RAPIDO, SON MUCHOS TEMAS?
+  document.getElementById("dropDown"),addEventListener("click", function(){
+
+    let tag = document.getElementById("content-Themes")
+    let themeBody = document.getElementById("themeBody")
+    let themeBodyNight = document.getElementById("themeNight")
+    let themeBodyDay = document.getElementById("themeDay")
+    let text, changeThemeLogo;
+
+
+    if ( tag.style.display === "none" ){
+        
+        tag.style.display= "block"
+
+         themeBodyNight.addEventListener
+            ("click", function () {
+
+                themeBody.style.backgroundColor = "#110038"
+
+                text = document.getElementById("colorTextGuifos") 
+                text.style.color = "#FFFFFF"
+
+                changeThemeLogo = document.getElementById("themeLogo")
+                changeThemeLogo.setAttribute("src", "./img/gifOF_logo_dark.png")
+
+            } )      
+            
+            themeBodyDay.addEventListener("click", function(){
+
+                themeBody.style.backgroundColor = "#fff4fd"
+                text = document.getElementById("colorTextGuifos")
+                text.style.color = "black"
+
+            })
+    
+    }
+
+    else{
+        tag.style.display = "none"
+    }
+  
+  })
+
+//  mostrar historial de busqueda
 function showHistorySearch(dataSearch){
 
     let newDiv = document.createElement("div")
@@ -29,7 +82,6 @@ function showHistorySearch(dataSearch){
    
     let list = document.getElementById("divParent");   
     list.insertBefore(newDiv, list.childNodes[1]); 
-
     
 }
 
@@ -56,14 +108,16 @@ async function topVideos (){
     let stateRequest = await fetch(urlTrendEndpoint)
     let responseJson = await stateRequest.json()
 
-    console.log("onjeto del trending :" + responseJson)
-    console.log(responseJson)
+    // console.log("onjeto del trending :" + responseJson)
+    // console.log(responseJson)
 
     let arrayUrl =[], index=0;
     responseJson.data.map(function (item) {
     arrayUrl[index]= item.images.fixed_height_still.url
         index++
     }) 
+
+    console.log(responseJson)
 
     showTredingGIf(arrayUrl)
    
@@ -80,33 +134,64 @@ function showTredingGIf( arrayUrlData ){
     }  
 }
 
-
+// obtener gif random
 async function suggestionsGif(){
 
     let urlRandom = "https://api.giphy.com/v1/gifs/random?api_key=TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ&limit=4"
-    let vectorSuggestions = [], stateRequest, responseJson;
+    let vectorSuggestions = [], stateRequest, responseJson,
+    vectorTitle=[], datoA;
 
+    let newVector
     for( let i=0; i <=3 ; i++ ){
 
     stateRequest = await fetch(urlRandom)
      responseJson = await stateRequest.json()
 
-    //  console.log(responseJson.data)
-
         vectorSuggestions[i] = responseJson.data.images.fixed_height_still.url
-        
-        // vectorSuggestions[i] = responseJson.data.images.downsized_medium.url
 
+        vectorTitle[i] = responseJson.data.title
     }
 
-    // console.log(responseJson.data)
+    // console.log(vectorTitle)
+    
+    addTitleSuggestion(vectorTitle)
     showSuggetionsGif(vectorSuggestions)
-
 
 }
 
-function showSuggetionsGif(Urlsuggestions){
+// inserta slug del gif de sugerencias
+function addTitleSuggestion(valueTitle) {
 
+    let item =0
+    let dato = document.getElementsByClassName("contentValue")
+    
+     for( item =0; item < valueTitle.length; item++){
+
+        dato[item].textContent = "#" +valueTitle[item]
+
+        console.log(valueTitle[item])
+    }
+
+}
+
+
+// no mostrar title, cuando haga peticion
+function noShowTitleGif(){
+
+    let  tag=[]
+
+    tag = document.getElementsByClassName("ValueSuggestionGif")
+
+    for (let i = 0; i < tag.length; i++)
+
+    {
+        console.log( tag[i].style.display= "none")
+    }
+     
+}
+
+// muestra gifs tendencias
+function showSuggetionsGif(Urlsuggestions){
 
     let tagIdGif= document.getElementsByClassName("gif-suggetions")
 
@@ -118,7 +203,7 @@ function showSuggetionsGif(Urlsuggestions){
 
 }
 
-
+// no mostrar placeholder de los inputs
 function noShowInputText (){
 
     let showInput = document.getElementById("Results")
@@ -138,6 +223,7 @@ function noShowInputText (){
 
 }
 
+// obtener datos del search
 async function getData (resul) { 
     
     try{
@@ -155,7 +241,7 @@ async function getData (resul) {
         // data.images.downsized_medium.url
         URL[con]=elemento.images.fixed_height_still.url;
         
-        console.log("este es el data tamaño fixed "  + URL[con])
+        // console.log("este es el data tamaño fixed "  + URL[con])
 
         con++;
 
@@ -169,6 +255,7 @@ async function getData (resul) {
     }
 }
 
+// muestra consulta de gif (search)
 function showGif(URL){
 
         let vectorGif = document.getElementsByClassName("gif")
