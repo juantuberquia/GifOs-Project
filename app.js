@@ -100,7 +100,7 @@ function showHistorySearch(dataSearch){
 //     cont++
 // }
 
-
+// peticion videos trend
 async function topVideos (){
 
     let urlTrendEndpoint  = "//api.giphy.com/v1/gifs/trending?api_key=TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ&limit=8"
@@ -123,6 +123,7 @@ async function topVideos (){
    
 }
 
+// mostrar videos trend
 function showTredingGIf( arrayUrlData ){
 
     let vectorTrending = document.getElementsByClassName("gifTrending")
@@ -159,17 +160,23 @@ async function suggestionsGif(){
 
 }
 
-// inserta slug del gif de sugerencias
+// RECORTAR STRING PARA OBTENER EL DATO Y REALZIAR LA BSUQUEDA VPOR VER MAS
+
+
+// inserta title al sugerencias gif
 function addTitleSuggestion(valueTitle) {
 
     let item =0
     let dato = document.getElementsByClassName("contentValue")
-    
+    let datoToString 
+
+
      for( item =0; item < valueTitle.length; item++){
 
-        dato[item].textContent = "#" +valueTitle[item]
+        datoToString = valueTitle[item]
 
-        console.log(valueTitle[item])
+        dato[item].textContent = "#" + datoToString.substr(0,13)
+
     }
 
 }

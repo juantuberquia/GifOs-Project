@@ -11,26 +11,7 @@
 
 .site-gifs-suggestions{
     margin-top: 4%;
-
-    .hashtag{
-
-        height:19px ;
-        width: 24%;
-        background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
-        margin-bottom: -18px;
-        
-        p{
-
-            font-family: "ChakraPetch";
-            font-weight: bold;
-            font-size: 14px;
-            color: #FFFFFF;
-            letter-spacing: 0;
-            padding-left: 5%;
-        }
-
-    }
-    
+   
     .place-suggestions{
 
         width:100%;
@@ -46,12 +27,15 @@
         display: flex;
         justify-content: space-between;
         margin-top: 1.5%;
+        height: 200px;
 
         .ValueSuggestionGif {
 
             background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
             width: 100%;
             height: 7%;
+            display: flex;
+            justify-content: space-between;
 
             .contentValue{
 
@@ -65,40 +49,26 @@
                 padding-left: 2%;
 
             }
+
+            .imgClose{
+
+                padding-right: 2%;
+            }
         }
        
+        .boxGif{
 
-        .sub-container-gif{
-            width: 49.3%;
-            height: 50px;
+            width: 100%s;
+            height: 100%;
 
-            img{
-
+            .styleGif {
                 width: 100%;
+                height: 100%;
             }
-
-            .subs-container-gif{
-
-                width: 20%;
-                height: 25%;
-
-                img {
-
-                    width:  100%;
-                }
-            }
-
         }
 
-
-        .eniac{
+        .contentTitleGif{
             width: 24%;
-            // height: 5[%;
-
-            img {
-                width: 100%;
-                height: 75%;
-            }
 
             .content-boton{
 
