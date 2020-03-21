@@ -1,7 +1,5 @@
 const api_key = "TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ"
 
-
-
 window.onload = function() 
 {
     suggestionsGif()
@@ -9,10 +7,19 @@ window.onload = function()
 
 }
 
-
-document.getElementById("button").addEventListener("click", function(){
+//escuchar click del boton search
+document.getElementById("button").addEventListener("click", function (  ){
 
     let resul = document.getElementById("search-gif").value
+
+    if(resul === ""){
+
+        noShowTitleGif()
+        getData(data)
+        showHistorySearch(data)
+        noShowInputText()
+
+    }
    
     // localStorageSearch(resul)
     
@@ -23,7 +30,53 @@ document.getElementById("button").addEventListener("click", function(){
 
   })
 
-//  seleccionar tema, COMO HACERLO MAS RAPIDO, SON MUCHOS TEMAS?
+// clic a boton ver mas y realizar busqueda
+  document.getElementById("boton-1").addEventListener("click", function (){
+
+    console.log ( "este es el vector " + vectorTitle[0])
+
+     noShowTitleGif()
+    getData( vectorTitle[0])
+    showHistorySearch( vectorTitle[0])
+    noShowInputText()
+    
+  })
+
+  document.getElementById("boton-2").addEventListener("click", function (){
+
+    console.log ( "este es el vector " + vectorTitle[1])
+
+     noShowTitleGif()
+    getData( vectorTitle[1])
+    showHistorySearch( vectorTitle[1])
+    noShowInputText()
+    
+  })
+
+  document.getElementById("boton-3").addEventListener("click", function (){
+
+    console.log ( "este es el vector " + vectorTitle[2])
+
+     noShowTitleGif()
+    getData( vectorTitle[2])
+    showHistorySearch( vectorTitle[2])
+    noShowInputText()
+    
+  })
+
+  document.getElementById("boton-4").addEventListener("click", function (){
+
+    console.log ( "este es el vector " + vectorTitle[3])
+
+     noShowTitleGif()
+    getData( vectorTitle[3])
+    showHistorySearch( vectorTitle[3])
+    noShowInputText()
+    
+  })
+
+
+//  seleccionar tema, COMO HACERLO MAS RAPIDO, hAY QUE CAMBIAR SON MUCHOS TEMAS?
   document.getElementById("dropDown"),addEventListener("click", function(){
 
     let tag = document.getElementById("content-Themes")
@@ -100,7 +153,7 @@ function showHistorySearch(dataSearch){
 //     cont++
 // }
 
-// peticion videos trend
+// peticion videos tendencias
 async function topVideos (){
 
     let urlTrendEndpoint  = "//api.giphy.com/v1/gifs/trending?api_key=TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ&limit=8"
@@ -136,11 +189,12 @@ function showTredingGIf( arrayUrlData ){
 }
 
 // obtener gif random
+var vectorTitle = []
 async function suggestionsGif(){
 
     let urlRandom = "https://api.giphy.com/v1/gifs/random?api_key=TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ&limit=4"
-    let vectorSuggestions = [], stateRequest, responseJson,
-    vectorTitle=[], datoA;
+    let  stateRequest, responseJson,vectorSuggestions = [],
+     datoA;
 
     let newVector
     for( let i=0; i <=3 ; i++ ){
@@ -159,9 +213,6 @@ async function suggestionsGif(){
     showSuggetionsGif(vectorSuggestions)
 
 }
-
-// RECORTAR STRING PARA OBTENER EL DATO Y REALZIAR LA BSUQUEDA VPOR VER MAS
-
 
 // inserta title al sugerencias gif
 function addTitleSuggestion(valueTitle) {
@@ -267,9 +318,25 @@ function showGif(URL){
 
         let vectorGif = document.getElementsByClassName("gif")
 
+        
+    console.log("entro al show gif")
+    console.log(typeof(URL))
+
     for(let i  =0 ; i <= vectorGif.length; i++ ){
-                
-        vectorGif[i].setAttribute('src', URL[i])
+        
+        if( typeof(URL) === "string" ) {
+
+            vectorGif[i].setAttribute('src', URL)
+
+        }
+
+        else{
+
+            vectorGif[i].setAttribute('src', URL[i])
+
+        }
+        
+        
 
     }  
  
