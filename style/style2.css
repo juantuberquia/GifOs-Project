@@ -118,21 +118,30 @@ height: 35%;
 }
 .buton{
 
+width: 23%;
+height: 25%;
+display: inline-block;
+text-align: center
+}
+
+.buton a{
+
+text-decoration: none;
 font-family: "Chakra Petch";
 font-size: 16px;
 color: #110038;
 letter-spacing: 0;
-text-align: center;
 line-height: 18px;
-width: 23%;
-height: 25%;
-display: inline-block;
-}
-.butonCancelar{
+display: block;
+margin-top: 4%;
 
+}
+
+.butonCancelar{
 background: #FFF4FD;
 border: 1px solid #110038;
 box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+
 }
 
 .butonComenzar{
