@@ -275,7 +275,6 @@ async function printGalery(id) {
       let respose = await fetch(url);
       let respJSON = await respose.json();
       let data = await respJSON;
-
       let getUrlGif = data.data.images.fixed_height.url;
 
       newDiv = document.createElement("div");
