@@ -1,175 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/styles.css" />
     <title>GIFos</title>
-   
-</head>
-<body  id="themeBody">
-   
-<div class="header-top">
-    <p> ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</p>
-</div>
+  </head>
 
-<header class="content-head center">
-    <div class="content-barra">
-       <img src="./img/gifOF_logo.png" alt="logo-gifOf" id="themeLogo">
-         <div class="sub-barra"> 
-            <div class="boton botonCreateGif" >
-                <a href="index2.html" id="createGif"> Crear Guifos</a>
-            </div>
-
-            <div class="boton" >
-                <a href="#"> Elegir temas</a>  
-                <div class="contentThemes" id="content-Themes">
-                    <div class="styleThemes themeNight"   id="themeNight"> 
-                        <a href="#" class="textTypeTheme">Sailor Night</a>
-                     </div>
-                    <div class="styleThemes themeDay">
-                        <a href="#" class="textTypeTheme" id="themeDay"> Sailor Day</a>      
-                   </div>
-                </div> 
-            </div>
-           
-            <div class="select-themes"><span id="dropDown ocultar">&#9662</span></div>
-   
-            <div class="mys-gif">
-                <a href="#" id="colorTextGuifos"> Mis Guifos</a>
-            </div>
-        </div>
+  <body id="themeBody">
+    <div class="header-top" id="counterVisits">
+      <p>
+        ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
+        de visitas: 12.765.803
+      </p>
     </div>
-
-        <div class="site-search">
-            <p>Buscar</p>
+    <header class="content-head center">
+      <div class="content-barra">
+        <img src="../img/gifOF_logo.png" alt="logo-gifOf" id="themeLogo" />
+        <div class="sub-barra">
+          <div class="boton botonCreateGif" id="botonCrear">
+            <a href="./index2.html" id="createGif"> Crear Guifos</a>
+          </div>
+          <div class="boton" id="ElegirTemas">
+            <a href="#" id="textElegir"> Elegir temas</a>
+            <div class="contentThemes" id="content-Themes">
+              <div class="styleThemes themeNight" id="themeNight">
+                <a href="#" id="textSailorNight" class="textTypeTheme"
+                  >Sailor Night</a
+                >
+              </div>
+              <div class="styleThemes themeDay" id="boxSailorday">
+                <a href="#" class="textTypeTheme" id="themeDay"> Sailor Day</a>
+              </div>
+            </div>
+          </div>
+          <button class="select-themes dropDown" id="DropDown">
+            <span id="iconDrop"> &#9662; </span>
+          </button>
+          <div class="mys-gif">
+            <a href="index3.html" id="colorTextGuifos"> Mis Guifos</a>
+          </div>
         </div>
-        <div class="barra-search">
-            <div class="content">
-                <input type="search" placeholder=" Busca gifs, hashtags, temas, busca lo que quieras. " class="barra-place-holder"  id="search-gif"> 
-            </div>
-            <div class="buton-buscar">
-                <img src="./img/lupa_inactive.svg" alt="" class="buton-img">
-                <input type="submit" value = "Buscar" class="buton-value" id="button">   
-            </div>
-      </div>       
-</header>
-
-<div  class="divParent center" id="divParent" >
-    <div class="hashtag historySearch" style="display: none;"> 
-        <p class="elementChild "> </p>  
-    </div> 
-</div>
-   
-<div class="content-Results center" id="Results">
-    <input type="text" placeholder="resultados de busqueda" class="searchResults place-suggestions" readonly >
-</div>
-
-<section class="site-gifs-suggestions center" >
-    <div  class="content-text">
-       <input type="text" placeholder="Hoy te sugerimos" class="place-suggestions" >
-   </div>
-   
-   <div class="container-gif">      
+      </div>
+      <div class="site-search" id="themeBoxSearch">
+        <p>Buscar</p>
+      </div>
+      <div class="barra-search" id="containerSearch">
+        <form class="content" autocomplete="off">
+          <input
+            type="search"
+            placeholder=" Busca gifs, hashtags, temas, busca lo que quieras. "
+            class="barra-place-holder"
+            id="search-gif"
+          />
+        </form>
+        <div class="buton-buscar" id="buton-buscar">
+          <img
+            src="../img/lupa_inactive.svg"
+            alt="imgLupaInact"
+            class="buton-img"
+            id="styleInputLupa"
+          />
+          <input type="submit" value="Buscar" class="buton-value" id="button" />
+        </div>
+      </div>
+      <div class="searchSuggestion" id="searchSuggestion">
+        <div class="containerSearch">
+          <div class="textSearch" id="textSearch-1">
+            <a href="#" id="textBatman">Batman</a>
+          </div>
+          <div class="textSearch" id="textSearch-2">
+            <a href="#" id="textHomero">Homero</a>
+          </div>
+          <div class="textSearch" id="textSearch-3">
+            <a href="#" id="textHello">Hello</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="divParent center" id="divParent"></div>
+    <div class="content-Results center" id="Results">
+      <input
+        type="text"
+        placeholder="resultados de busqueda"
+        class="searchResults place-suggestions"
+        readonly
+      />
+    </div>
+    <section class="site-gifs-suggestions center">
+      <div class="content-text">
+        <input
+          type="text"
+          placeholder="Hoy te sugerimos"
+          class="place-suggestions"
+        />
+      </div>
+      <div class="container-gif">
         <div class="contentTitleGif">
-            <div class="ValueSuggestionGif"> 
-                <span class="contentValue" >  </span>
-                <img src="./img/close.svg" alt="" class="imgClose">
-            </div>
-            <div class="boxGif">
-                <img src="" class="gif gif-suggetions styleGif" alt="">
-            </div>   
-            <div class="content-boton">
-                <a href="#" class="boton-mas" id="boton-1" > Ver más...</a>
-            </div>
-        </div>  
-           
-        <div class="contentTitleGif" >
-            <div class="ValueSuggestionGif">
-                <span class="contentValue"> </span>
-                <img src="./img/close.svg" alt="" class="imgClose">
-            </div>
-            <div class="boxGif">
-                <img src="" class="gif gif-suggetions styleGif" alt="">
-            </div>
-            <div class="content-boton">
-                <a href="#" class="boton-mas" id="boton-2"> Ver más...</a>
-            </div>
+          <div class="ValueSuggestionGif" id="suggestion-1">
+            <span class="contentValue"> </span>
+            <img src="../img/close.svg" alt="Close" class="imgClose" />
+          </div>
+          <div class="boxGif">
+            <img
+              src="/"
+              class="gif gif-suggetions styleGif"
+              alt="GifSuggestion"
+            />
+          </div>
+          <div class="content-boton butonVermas">
+            <a href="#" class="boton-mas" id="boton-1"> Ver más...</a>
+          </div>
         </div>
-
         <div class="contentTitleGif">
-            <div class="ValueSuggestionGif">
-                <span class="contentValue">   </span>
-                <img src="./img/close.svg" alt="" class="imgClose">               
-            </div>
-            <div class="boxGif">
-                <img src="" class="gif gif-suggetions styleGif" alt="">
-            </div>
-            <div class="content-boton">
-                <a href="#" class="boton-mas" id="boton-3"> Ver más...</a>
-            </div>
+          <div class="ValueSuggestionGif" id="suggestion-2">
+            <span class="contentValue"> </span>
+            <img src="../img/close.svg" alt="close" class="imgClose" />
+          </div>
+          <div class="boxGif">
+            <img
+              src="/"
+              class="gif gif-suggetions styleGif"
+              alt="GifSuggestion"
+            />
+          </div>
+          <div class="content-boton butonVermas">
+            <a href="#" class="boton-mas" id="boton-2"> Ver más...</a>
+          </div>
         </div>
-
         <div class="contentTitleGif">
-            <div class="ValueSuggestionGif">
-                <span class="contentValue">   </span>
-                <img src="./img/close.svg" alt="" class="imgClose">
-            </div>
-            <div class="boxGif">
-                <img src="" class="gif gif-suggetions styleGif" alt="">
-            </div>
-            <div class="content-boton">
-                <a href="#" class="boton-mas" id="boton-4" > Ver más...</a>
-            </div>
+          <div class="ValueSuggestionGif" id="suggestion-3">
+            <span class="contentValue"> </span>
+            <img src="../img/close.svg" alt="close" class="imgClose" />
+          </div>
+          <div class="boxGif">
+            <img
+              src="/"
+              class="gif gif-suggetions styleGif"
+              alt="GifSuggestion"
+            />
+          </div>
+          <div class="content-boton butonVermas">
+            <a href="#" class="boton-mas" id="boton-3"> Ver más...</a>
+          </div>
         </div>
-   </div>
-</section >
-
-<section class="site-gifs-suggestions center" >
-    <div class="content-text">
-       <input type="text" placeholder="Tendencias:" class="place-suggestions">
-   </div>
-
-   <div class="container-gif">
-        <div class="contentTitleGif boxGif">
-            <img src="" alt=""  class=" styleGif gif gifTrending">
-        </div>       
-
-        <div class="contentTitleGif boxGif">
-            <img src="" alt="" class="styleGif  gif gifTrending">
+        <div class="contentTitleGif">
+          <div class="ValueSuggestionGif" id="suggestion-4">
+            <span class="contentValue"> </span>
+            <img src="../img/close.svg" alt="close" class="imgClose" />
+          </div>
+          <div class="boxGif">
+            <img
+              src="/"
+              class="gif gif-suggetions styleGif"
+              alt="GifSuggestion"
+            />
+          </div>
+          <div class="content-boton butonVermas">
+            <a href="#" class="boton-mas" id="boton-4"> Ver más...</a>
+          </div>
         </div>
-
+      </div>
+    </section>
+    <section class="site-gifs-suggestions center">
+      <div class="content-text">
+        <input
+          type="text"
+          placeholder="Tendencias:"
+          class="place-suggestions"
+        />
+      </div>
+      <div class="container-gif">
         <div class="contentTitleGif boxGif">
-            <img src="" alt="" class=" styleGif gif gifTrending">
+          <img src="/" alt="GifTrend" class="styleGif gif gifTrending" />
+          <div class="boxTitles" id="boxTitleName-1">
+            <span id="nameTitle-1"> </span>
+            <img src="/" alt="" />
+          </div>
         </div>
-
         <div class="contentTitleGif boxGif">
-            <img src="" alt="" class=" styleGif  gif gifTrending">
+          <img src="/" alt="GifTrend" class="styleGif gif gifTrending" />
+          <div class="boxTitles" id="boxTitleName-2">
+            <span id="nameTitle-2"> </span>
+            <img src="/" alt="" />
+          </div>
         </div>
-   </div>
-
-   <div class="container-gif">
         <div class="contentTitleGif boxGif">
-            <img src="" alt="" class="styleGif gif gifTrending">
-        </div>       
-
-        <div class="contentTitleGif boxGif">
-            <img src="" alt="" class=" styleGif gif gifTrending">
+          <img src="/" alt="GifTrend" class="styleGif gif gifTrending" />
+          <div class="boxTitles" id="boxTitleName-3">
+            <span id="nameTitle-3"> </span>
+            <img src="/" alt="" />
+          </div>
         </div>
-
         <div class="contentTitleGif boxGif">
-            <img src="" alt="" class=" styleGif gif gifTrending">
+          <img src="/" alt="GifTrend" class="styleGif gif gifTrending" />
+          <div class="boxTitles" id="boxTitleName-4">
+            <span id="nameTitle-4"> </span>
+            <img src="/" alt="" />
+          </div>
         </div>
-
+      </div>
+      <div class="container-gif">
         <div class="contentTitleGif boxGif">
-            <img src="" alt="" class="styleGif gif gifTrending">
+          <img src="/" alt="GifTrend" class="styleGif gif gifTrending" />
+          <div class="boxTitles" id="boxTitleName-5">
+            <span id="nameTitle-5"> </span>
+            <img src="/" alt="" />
+          </div>
         </div>
- </div>
-</section >
-
-
-<script src="./app.js"></script>
-</body>
+        <div class="contentTitleGif boxGif">
+          <img src="/" alt="GifTrend" class="styleGif gif gifTrending" />
+          <div class="boxTitles" id="boxTitleName-6">
+            <span id="nameTitle-6"> </span>
+            <img src="/" alt="" />
+          </div>
+        </div>
+        <div class="contentTitleGif boxGif">
+          <img src="/" alt="GifTrend" class="styleGif gif gifTrending" />
+          <div class="boxTitles" id="boxTitleName-7">
+            <span id="nameTitle-7"> </span>
+            <img src="/" alt="" />
+          </div>
+        </div>
+        <div class="contentTitleGif boxGif">
+          <img src="/" alt="GifTrend" class="styleGif gif gifTrending" />
+          <div class="boxTitles" id="boxTitleName-8">
+            <span id="nameTitle-8"> </span>
+            <img src="/" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/app.js"></script>
+  </body>
 </html>
