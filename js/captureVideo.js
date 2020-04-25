@@ -150,7 +150,7 @@ function subirGIF(data) {
       "?api_key=" +
       "TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ",
     {
-      method: "POST",
+      method: "POST", // or 'PUT'
       body: data,
     }
   )
@@ -275,6 +275,7 @@ async function printGalery(id) {
       let respose = await fetch(url);
       let respJSON = await respose.json();
       let data = await respJSON;
+
       let getUrlGif = data.data.images.fixed_height.url;
 
       newDiv = document.createElement("div");

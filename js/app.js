@@ -1,10 +1,8 @@
 const api_key = "TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ";
 let vectorTitle = [];
 
-window.onload = function () {
-  suggestionsGif();
-  topVideos();
-};
+suggestionsGif();
+topVideos();
 
 //resultados sugeridos, batman , hello, homero
 let searchGif = document.getElementById("search-gif");
@@ -153,7 +151,7 @@ let textTitle8 = document.getElementById("nameTitle-8");
 function themeNight() {
   themeBody.style.backgroundColor = "#110038";
   counterVisits.classList.add("themeNightHeader");
-  themeLogo.setAttribute("src", "../img/gifOF_logo_dark.png");
+  themeLogo.setAttribute("src", "./img/gifOF_logo_dark.png");
   botonCrear.style.background = "#EE3EFE";
   createGif.style.color = "#FFFFFF";
   botonElegir.style.background = "#EE3EFE";
@@ -171,7 +169,7 @@ function themeNight() {
   subBoxSearch.style.background = "#B4B4B4";
   styleInputButon.style.background = "#B4B4B4";
   textBuscar.style.background = "#B4B4B4";
-  styleInputLupa.setAttribute("src", "../img/Combined Shape.svg");
+  styleInputLupa.setAttribute("src", "./img/Combined Shape.svg");
   textBuscar.style.color = "#8F8F8F";
   searchSuggestion.style.background = "#B4B4B4";
   textSearch1.style.background = "#CCCCCC";
@@ -193,7 +191,7 @@ function themeNight() {
     styleInputButon.style.background = "#EE3EFE";
     styleInputText.style.background = "#EE3EFE";
     styleInputText.style.color = "#FFFFFF";
-    styleInputLupa.setAttribute("src", "../img/lupa_light.svg");
+    styleInputLupa.setAttribute("src", "./img/lupa_light.svg");
   });
 
   // estilos efecto hover sobre los gifs segun el theme
@@ -312,7 +310,7 @@ function themeNight() {
 function themeDay() {
   themeBody.style.backgroundColor = "#FFF4FD";
   counterVisits.classList.remove("themeNightHeader");
-  themeLogo.setAttribute("src", "../img/gifOF_logo.png");
+  themeLogo.setAttribute("src", "./img/gifOF_logo.png");
   botonCrear.classList.remove("themeNightBoton");
   botonCrear.style.background = "#F7C9F3";
   createGif.style.color = "#110038";
@@ -331,7 +329,7 @@ function themeDay() {
   subBoxSearch.style.background = "#E6E6E6";
   styleInputButon.style.background = "#E6E6E6";
   textBuscar.style.background = "#E6E6E6";
-  styleInputLupa.setAttribute("src", "../img/lupa_inactive.svg");
+  styleInputLupa.setAttribute("src", "./img/lupa_inactive.svg");
   textBuscar.style.color = "#B4B4B4";
   searchSuggestion.style.background = "#E6E6E6";
   textSearch1.style.background = "#F0F0F0";
@@ -353,7 +351,7 @@ function themeDay() {
     styleInputButon.style.background = "#f7c9f3";
     styleInputText.style.background = "#f7c9f3";
     styleInputText.style.color = "#110038";
-    styleInputLupa.setAttribute("src", "../img/lupa.svg");
+    styleInputLupa.setAttribute("src", "./img/lupa.svg");
   });
 
   // estilos efecto hover sobre los gifs en el theme day
@@ -489,7 +487,7 @@ let arrayTitles = [];
 async function topVideos() {
   try {
     let urlTrendEndpoint =
-      "//api.giphy.com/v1/gifs/trending?api_key=TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ&limit=8";
+      "https://api.giphy.com/v1/gifs/trending?api_key=TW8uocddzGI40lSrPSm8hM4cNSTUyqiQ&limit=8";
 
     let stateRequest = await fetch(urlTrendEndpoint);
     let responseJson = await stateRequest.json();
@@ -601,7 +599,7 @@ async function getData(resul) {
       con = 0;
 
     let res = await fetch(
-      "http://api.giphy.com/v1/gifs/search?q=" +
+      "https://api.giphy.com/v1/gifs/search?q=" +
         resul +
         "&api_key=" +
         api_key +
